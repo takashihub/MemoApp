@@ -50,6 +50,7 @@ export default function SignUpScreen(props) {
         />
         <Button
           label="Submit"
+          // eslint-disable-next-line react/jsx-no-bind
           onPress={handlePress}
         />
         <View style={styles.footer}>
