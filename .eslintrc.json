@@ -20,6 +20,7 @@
     "rules": {
         "no-use-before-define": 0,
         "react/react-in-jsx-scope": "off",
-        "indent": "off"
+        "indent": "off",
+        "react/prop-types": ["error", { "ignore": ["navigation"] }]
     }
 }
