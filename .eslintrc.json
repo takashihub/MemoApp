@@ -21,6 +21,7 @@
         "no-use-before-define": 0,
         "react/react-in-jsx-scope": "off",
         "indent": "off",
-        "react/prop-types": ["error", { "ignore": ["navigation"] }]
+        "react/prop-types": ["error", { "ignore": ["navigation"] }],
+        "import/prefer-default-export": 0
     }
 }
