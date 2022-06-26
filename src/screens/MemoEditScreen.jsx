@@ -7,6 +7,7 @@ import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeybordSafeView';
+import { translateErrors } from '../utils';
 
 export default function memoEditScreen(props) {
   const { navigation, route } = props;
@@ -26,7 +27,8 @@ export default function memoEditScreen(props) {
           navigation.goBack();
         })
         .catch((error) => {
-          Alert.alert(error.code);
+          const errorMsg = translateErrors(error.code);
+          Alert.alert(errorMsg.title, errorMsg.description);
         });
     }
   }
