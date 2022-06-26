@@ -6,12 +6,11 @@ import {
 import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
-import { dateToString} from '../utils';
+import { dateToString } from '../utils';
 
 export default function MemoDetailScreen(props) {
   const { navigation, route } = props;
   const { id } = route.params;
-  console.log(id);
   const [memo, setMemo] = useState(null);
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export default function MemoDetailScreen(props) {
       const db = firebase.firestore();
       const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
       unsubscribe = ref.onSnapshot((doc) => {
-        console.log(doc.id, doc.data());
         const data = doc.data();
         setMemo({
           id: doc.id,
